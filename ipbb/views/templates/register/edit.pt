@@ -1,0 +1,26 @@
+<html metal:use-macro="load: ../base.pt">
+<div metal:fill-slot="content">
+  <h1>Registrasi</h1>
+  <form method="post" accept-charset="utf-8" id="myform" class="form-horizontal" enctype="multipart/form-data">
+    <div tal:condition="'id' in form">
+      <div tal:define="field form['id']" style="display: none;">
+          ${structure:field.serialize()}
+      </div>
+    </div>
+       
+    <div class="form-group"> 
+      <div tal:repeat "field form">
+        <label for="${field.oid}" class="control-label col-md-2" id="req-${field.oid}">
+                ${request.session['ag_step_nm']} ${field.title}</label>
+        <div class="col-md-1">
+           <input type="text" class="form-control" id="${field.oid}" 
+                  value="${request.session.tahun}" readonly name="${field.oid}">
+          <p id="error-${field.oid}" class="help-block" tal:condition="field.error"
+             tal:repeat="error field.error.messages()">
+             ${error}</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</html>

@@ -1,0 +1,16 @@
+<html metal:use-macro="load: base_auth.pt">
+<div metal:fill-slot="content">
+
+<!-- Main component for a primary marketing message or call to action -->
+<div class="row">
+  <div class="col-md-9">
+    <h1>Selamat Datang di <code>i-PBB</code></h1>
+    <p>
+    <h3>Profile </h3>
+       
+    <p><a href="/register/id/edit">Edit Profile</a>
+  </div>
+</div>
+
+</div>
+</html>

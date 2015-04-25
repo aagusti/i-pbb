@@ -1,0 +1,30 @@
+<html metal:use-macro="load: ../base.pt">
+<div metal:fill-slot="content">
+<h1>Registrasi Pemda</h1>
+<form method="post" accept-charset="utf-8" id="myform" class="form-horizontal" enctype="multipart/form-data">
+
+  <div tal:repeat="field form">
+    <div class="form-group"> 
+      <label for="${field.oid}" class="control-label col-md-2" id="req-${field.oid}">
+              ${field.title}</label>
+      <div class="col-md-10">
+        ${structure:field.serialize()}
+        <ul tal:condition="field.error">
+          <li tal:repeat="error field.error.messages()">
+            ${structure:error}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+      <div class="col-md-3">
+          <button type="submit" class="btn btn-primary" id="save" name="save">Simpan</button>
+          <button type="submit" class="btn btn-danger" id="cancel" name="cancel">Batal</button>
+      </div>
+  </div>
+  
+</form>
+</div>
+
+</html>

@@ -1,0 +1,8 @@
+<html metal:use-macro="load: ../base_auth.pt">
+<div metal:fill-slot="content">
+<h3>${request.title}</h3>
+
+<hr>
+<div tal:content="structure form"/>
+</div>
+</html>

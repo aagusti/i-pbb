@@ -1,0 +1,12 @@
+<html metal:use-macro="load: base.pt">
+<div metal:fill-slot="nav">
+    <ul class="nav navbar-nav">
+      <li tal:attributes="class request.path == '/' and 'active'">
+          <a href="/"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">  
+      <li tal:attributes="class request.path == '/login' and 'active'">
+          <a href="/login"><span class="glyphicon glyphicon-login"></span>Login</a></li>
+    </ul>        
+</div>
+</html>
